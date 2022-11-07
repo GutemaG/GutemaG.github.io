@@ -11,6 +11,9 @@
 - css
 - javascript
 
+## Live Demo
+
+try [Live Demo](https://gutemag.github.io/)
 
 ## Getting Started
 
@@ -20,7 +23,7 @@ To get a local copy up and running follow these simple example steps.
     - basic html, css, javascript 
 
 ### Setup
-    - git clone https://github.com/GutemaG/Portfolio.git
+    - git clone https://github.com/GutemaG/GutemaG.github.io.git
 
 ### Install
     - npm install
