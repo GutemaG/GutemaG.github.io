@@ -15,6 +15,10 @@
 
 try [Live Demo](https://gutemag.github.io/)
 
+## Portfolio presentation video
+
+see [video description](https://www.loom.com/share/41eaf3d45d344994b5c9e12836d2db0f)
+
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
