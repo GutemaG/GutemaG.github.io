@@ -86,9 +86,38 @@ nav .logo {
 }
 
 nav .menu {
-  display: none;
-  align-items: center;
+  /* display: none; */
+}
+
+.menu.active {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  background-color: #6070ff;
+  position: fixed;
+  top: 0;
+  right: 0;
   gap: 8px;
+  padding-left: 28px;
+  padding-top: 90px;
+  opacity: 0.9;
+}
+
+.close-menu {
+  position: fixed;
+  top: 6px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+}
+
+.menu.active li a {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 44px;
+  display: flex;
+  color: #fff;
 }
 
 .tags li {
@@ -144,7 +173,9 @@ nav .menu li:hover {
   color: var(--leading-text);
   display: flex;
   align-items: center;
-  position: relative;
+
+  /* position: relative; */
+
   animation: drop-down 2s forwards;
   transition: border 50ms ease-in;
 }
@@ -166,7 +197,9 @@ nav .menu li:hover {
 .headline-container .about-myself {
   font-weight: 400;
   color: var(--text-color);
-  position: relative;
+
+  /* position: relative; */
+
   animation: pop-from-right 2s forwards;
 }
 
@@ -222,7 +255,9 @@ nav .menu li:hover {
 .card img {
   width: 295px;
   height: 220px;
-  position: relative;
+
+  /* position: relative; */
+
   animation: left-to-right 2s forwards;
 }
 
