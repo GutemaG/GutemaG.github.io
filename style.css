@@ -86,7 +86,15 @@ nav .logo {
 }
 
 nav .menu {
-  /* display: none; */
+  display: none;
+}
+
+.show {
+  display: flex;
+}
+
+.hide {
+  display: none;
 }
 
 .menu.active {
