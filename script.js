@@ -10,19 +10,19 @@ const toggleClassList = (element, className) => {
 openMenu.addEventListener('click', () => {
   toggleClassList(menu, 'active');
   toggleClassList(openMenu, 'hide');
-  toggleClassList(closeMenu, 'active');
+  toggleClassList(closeMenu, 'show');
 });
 
 closeMenu.addEventListener('click', () => {
   toggleClassList(menu, 'active');
   toggleClassList(openMenu, 'hide');
-  toggleClassList(closeMenu, 'active');
+  toggleClassList(closeMenu, 'show');
 });
 
 navItems.forEach((navItem) => {
   navItem.addEventListener('click', () => {
     toggleClassList(menu, 'active');
     openMenu.classList.remove('hide');
-    closeMenu.classList.remove('active');
+    closeMenu.classList.remove('show');
   });
 });
