@@ -26,3 +26,23 @@ navItems.forEach((navItem) => {
     closeMenu.classList.remove('show');
   });
 });
+
+const portfolios = {
+  portfolio1: {
+    name: 'Tonic',
+    description: '',
+    technologies: ['HTML', 'CSS', 'JavaScript'],
+    linkToLive: '',
+    linkToSource: '',
+    featured: '',
+  },
+
+  portfolio2: {
+    name: 'Tonic',
+    description: '',
+    technologies: ['HTML', 'CSS', 'JavaScript'],
+    linkToLive: '',
+    linkToSource: '',
+    featured: '',
+  },
+};
