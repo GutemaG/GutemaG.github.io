@@ -98,14 +98,18 @@ const modalContent = (obj) => {
         </ul>
         <hr >
         <div class="project-btn">
-          <button class="btn">
-            See live
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-          </button>
-          <button class="btn">
-            See Source
-            <i class="fa-brands fa-github"></i>
-          </button>
+          <a href=${obj.linkToLive}>
+            <button class="btn">
+              See live
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </button>
+          </a>
+          <a href=${obj.linkToSource}>
+            <button class="btn">
+              See Source
+              <i class="fa-brands fa-github"></i>
+            </button>
+          </a>
         </div>
       </div>
   </div>
@@ -129,22 +133,24 @@ const findPortfolio = (id) => {
 
 const changeModalContent = (content) => {
   modalContainer.innerHTML = modalContent(content);
-
+  
 }
 
-allActionButton.forEach((action) => {
-  action.addEventListener('click',(e) => {
-    let id = e.target.id;
-    let num = id.split("-")[2]
-    changeModalContent(findPortfolio(num));
-  });
-});
+// allActionButton.forEach((action) => {
+//   action.addEventListener('click',(e) => {
+//     let id = e.target.id;
+//     let num = id.split("-")[2]
+//     changeModalContent(findPortfolio(num));
+    
+//   });
+  
+// });
 
 seeProjectBtn.addEventListener('click', () => {
   modalContainer.style.display = 'block'
 });
 
 closeContainer.addEventListener('click', () => {
+  console.log("hi")
   modalContainer.style.display = 'none'
-  modalContainer.innerHTML = ''
 })
