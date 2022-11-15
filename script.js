@@ -3,24 +3,26 @@ const menu = document.querySelector('.menu');
 const closeMenu = document.querySelector('.close-menu');
 const navItems = document.querySelectorAll('.nav-item');
 
+const toggleClassList = (element, className) => {
+  element.classList.toggle(className);
+};
+
 openMenu.addEventListener('click', () => {
-  menu.classList.toggle('active');
-  openMenu.classList.toggle('hide');
-  closeMenu.classList.toggle('show');
+  toggleClassList(menu, 'active');
+  toggleClassList(openMenu, 'hide');
+  toggleClassList(closeMenu, 'active');
 });
 
 closeMenu.addEventListener('click', () => {
-  menu.classList.toggle('active');
-  openMenu.classList.toggle('show');
-  openMenu.classList.toggle('hide');
-  closeMenu.classList.toggle('show');
+  toggleClassList(menu, 'active');
+  toggleClassList(openMenu, 'hide');
+  toggleClassList(closeMenu, 'active');
 });
 
 navItems.forEach((navItem) => {
   navItem.addEventListener('click', () => {
-    menu.classList.toggle('active');
-    openMenu.classList.toggle('show');
-    openMenu.classList.toggle('hide');
-    closeMenu.classList.toggle('show');
+    toggleClassList(menu, 'active');
+    openMenu.classList.remove('hide');
+    closeMenu.classList.remove('active');
   });
 });
