@@ -62,7 +62,49 @@ const portfolios = {
 };
 
 const modalContainer = document.querySelector('.modal-container');
+const works = document.querySelector('#portfolio');
 
+const cardContent = (obj) => {
+  const content = `
+        <div class="portfolio-snapshot">
+          <img
+            src="${obj.image}"
+            alt="portfolio-${obj.id}"
+          />
+        </div>
+        <div class="left-block">
+          <div class="portfolio-info">
+            <h1 class="portfolio-title">${obj.name}</h1>
+            <ul class="client-role-year">
+              <li class="client">CANOPY</li>
+              <li class="role">Back End Dev</li>
+              <li class="year">2015</li>
+            </ul>
+          </div>
+          <p class="portfolio-description">
+           ${obj.description}
+          </p>
+          <div>
+            <ul class="tags">
+              <li class="tag">HTML</li>
+              <li class="tag">CSS</li>
+              <li class="tag">JavaScript</li>
+            </ul>
+          </div>
+          <div class="actions">
+            <button class="action action-text btn" id="see-project-1" onclick='showDetailModal(${obj.id})'>See Project</button>
+          </div>
+        </div>
+`;
+  return content;
+};
+
+Object.keys(portfolios).forEach((portfolio) => {
+  const cardElement = document.createElement('div');
+  cardElement.classList.add('card');
+  cardElement.innerHTML = cardContent(portfolios[portfolio]);
+  works.append(cardElement);
+});
 
 const modalContent = (obj) => {
   const content = `
@@ -70,8 +112,7 @@ const modalContent = (obj) => {
       <div class="modal-top">
         <div class="modal-header">
           <h1>${obj.name}</h1>
-          <button class="close-container">
-            <!-- <img src="icons/close-menu.svg" alt="close-menu-icon" class="close-menu"> -->
+          <button class="close-container" onclick=closeModal()>
             <i class="fa fa-times" aria-hidden="true"></i>
           </button>
         </div>
@@ -118,39 +159,24 @@ const modalContent = (obj) => {
   return content;
 };
 
-const allActionButton = document.querySelectorAll('.action')
-const seeProjectBtn = document.querySelector('#see-project-1');
-const closeContainer = document.querySelector('.close-container');
-
 const findPortfolio = (id) => {
-  for(let portfolio in portfolios) {
-    if(portfolios[portfolio].id == id){
-      return portfolios[portfolio]
+  // eslint-disable-next-line consistent-return
+  Object.keys(portfolios).forEach((portfolio) => {
+    if (portfolios[portfolio].id === id) {
+      return portfolios[portfolio];
     }
-  }
-  return {}
-}
+  });
+  return {};
+};
 
-const changeModalContent = (content) => {
-  modalContainer.innerHTML = modalContent(content);
-  
-}
+// eslint-disable-next-line no-unused-vars
+const showDetailModal = (portfolioId) => {
+  modalContainer.style.display = 'block';
+  const portfolio = findPortfolio(portfolioId);
+  modalContainer.innerHTML = modalContent(portfolio);
+};
 
-// allActionButton.forEach((action) => {
-//   action.addEventListener('click',(e) => {
-//     let id = e.target.id;
-//     let num = id.split("-")[2]
-//     changeModalContent(findPortfolio(num));
-    
-//   });
-  
-// });
-
-seeProjectBtn.addEventListener('click', () => {
-  modalContainer.style.display = 'block'
-});
-
-closeContainer.addEventListener('click', () => {
-  console.log("hi")
-  modalContainer.style.display = 'none'
-})
+// eslint-disable-next-line no-unused-vars
+const closeModal = () => {
+  modalContainer.style.display = 'none';
+};
