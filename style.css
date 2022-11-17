@@ -649,6 +649,14 @@ form > input::placeholder {
   line-height: 20px;
 }
 
+.error-message {
+  color: red;
+  font-size: 15px;
+  font-style: italic;
+  margin-left: 27px;
+  font-weight: 500;
+}
+
 @media screen and (min-width: 768px) {
   .menu-icon {
     display: none;
