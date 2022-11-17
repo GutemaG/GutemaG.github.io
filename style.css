@@ -296,6 +296,7 @@ nav .menu li:hover {
 }
 
 .left-block {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -303,6 +304,7 @@ nav .menu li:hover {
 }
 
 .portfolio-snapshot {
+  flex: 1;
   border-radius: 8px;
 }
 
@@ -674,6 +676,7 @@ form > input::placeholder {
   }
 
   .card {
+    display: flex;
     flex-direction: row;
     gap: 22px;
     justify-content: center;

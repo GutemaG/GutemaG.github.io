@@ -27,6 +27,14 @@ navItems.forEach((navItem) => {
   });
 });
 
+const createClientRoleYear = (client, role, year) => (
+  `
+    <li class="client">${client}</li>
+    <li class="role">${role}</li>
+    <li class="year">${year}</li>
+  `
+);
+
 const portfolios = [
   {
     id: 'portfolio1',
@@ -42,6 +50,7 @@ const portfolios = [
     linkToLive: '#',
     linkToSource: '#',
     featured: '',
+    clientRoleYear: createClientRoleYear('CANOPY', 'Back End Dev', '2022'),
   },
   {
     id: 'portfolio2',
@@ -57,6 +66,7 @@ const portfolios = [
     linkToLive: '#',
     linkToSource: '#',
     featured: '',
+    clientRoleYear: createClientRoleYear('CANOPY', 'Back End Dev', '2020'),
   },
   {
     id: 'portfolio3',
@@ -72,6 +82,8 @@ const portfolios = [
     linkToLive: '#',
     linkToSource: '#',
     featured: '',
+    clientRoleYear: createClientRoleYear('CANOPY', 'Back End Dev', '2021'),
+
   },
 ];
 
@@ -82,27 +94,22 @@ const createCardContent = (obj) => {
     <div class="portfolio-snapshot">
       <img
         src="${obj.image}"
-        alt="portfolio-1"
+        alt="${obj.name}-image"
       >
     </div>
     <div class="left-block">
       <div class="portfolio-info">
         <h1 class="portfolio-title">${obj.name}</h1>
         <ul class="client-role-year">
-          <li class="client">CANOPY</li>
-          <li class="role">Back End Dev</li>
-          <li class="year">2015</li>
+          ${obj.clientRoleYear}
         </ul>
       </div>
       <p class="portfolio-description">
-        A daily selection of privately personalized reads; no accounts or
-        sign-ups required.
+        ${obj.description}
       </p>
       <div>
         <ul class="tags">
-          <li class="tag">HTML</li>
-          <li class="tag">CSS</li>
-          <li class="tag">JavaScript</li>
+        ${obj.technologies.map((technology) => `<li class="tag">${technology}</li>`).join('')}
         </ul>
       </div>
       <div class="actions">
@@ -119,7 +126,7 @@ const portfolioDescription = document.querySelector('.modal .portfolio-descripti
 const liveLink = document.querySelector('#live-link');
 const sourceLink = document.querySelector('#source-link');
 const technologies = document.querySelector('.modal-bottom-right .technologies');
-
+const clientRoleYear = document.querySelector('.modal .client-role-year');
 const createCardDetailContent = (obj) => {
   portfolioTitle.textContent = obj.name;
   modalImage.setAttribute('src', obj.image);
@@ -134,6 +141,7 @@ const createCardDetailContent = (obj) => {
     listItem.textContent = obj.technologies[i];
     technologies.appendChild(listItem);
   }
+  clientRoleYear.innerHTML = obj.clientRoleYear;
 };
 
 portfolios.forEach((portfolio) => {
