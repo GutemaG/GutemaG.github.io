@@ -26,3 +26,141 @@ navItems.forEach((navItem) => {
     closeMenu.classList.remove('show');
   });
 });
+
+const createClientRoleYear = (client, role, year) => (
+  `
+    <li class="client">${client}</li>
+    <li class="role">${role}</li>
+    <li class="year">${year}</li>
+  `
+);
+
+const portfolios = [
+  {
+    id: 'portfolio1',
+    name: 'Tonic',
+    description: `Lorem Ipsum is simply dummy text of the printing and 
+      typesetting industry. Lorem Ipsum has been the industry's standard 
+      dummy text ever since the 1500s, when an unknown printer took a 
+      galley of type and scrambled it to make a type specimen book. 
+      It has survived not only five centuries, but also the leap into 
+      electronic typesetting, remaining essent`,
+    image: 'assets/images/snapshoot-portfolio-1.png',
+    technologies: ['HTML', 'CSS', 'JavaScript'],
+    linkToLive: '#',
+    linkToSource: '#',
+    featured: '',
+    clientRoleYear: createClientRoleYear('CANOPY', 'Back End Dev', '2022'),
+  },
+  {
+    id: 'portfolio2',
+    name: 'Multi-Post Stories',
+    description: `Lorem Ipsum is simply dummy text of the printing and 
+      typesetting industry. Lorem Ipsum has been the industry's standard 
+      dummy text ever since the 1500s, when an unknown printer took a 
+      galley of type and scrambled it to make a type specimen book. 
+      It has survived not only five centuries, but also the leap into 
+      electronic typesetting, remaining essent`,
+    image: 'assets/images/snapshoot-portfolio-2.png',
+    technologies: ['HTML', 'CSS', 'JavaScript'],
+    linkToLive: '#',
+    linkToSource: '#',
+    featured: '',
+    clientRoleYear: createClientRoleYear('CANOPY', 'Back End Dev', '2020'),
+  },
+  {
+    id: 'portfolio3',
+    name: 'Facebook 360',
+    description: `Lorem Ipsum is simply dummy text of the printing and 
+      typesetting industry. Lorem Ipsum has been the industry's standard 
+      dummy text ever since the 1500s, when an unknown printer took a 
+      galley of type and scrambled it to make a type specimen book. 
+      It has survived not only five centuries, but also the leap into 
+      electronic typesetting, remaining essent`,
+    image: 'assets/images/snapshoot-portfolio-3.png',
+    technologies: ['HTML', 'CSS', 'JavaScript'],
+    linkToLive: '#',
+    linkToSource: '#',
+    featured: '',
+    clientRoleYear: createClientRoleYear('CANOPY', 'Back End Dev', '2021'),
+
+  },
+];
+
+const works = document.querySelector('#portfolio');
+
+const createCardContent = (obj) => {
+  const content = `
+    <div class="portfolio-snapshot">
+      <img
+        src="${obj.image}"
+        alt="${obj.name}-image"
+      >
+    </div>
+    <div class="left-block">
+      <div class="portfolio-info">
+        <h1 class="portfolio-title">${obj.name}</h1>
+        <ul class="client-role-year">
+          ${obj.clientRoleYear}
+        </ul>
+      </div>
+      <p class="portfolio-description">
+        ${obj.description}
+      </p>
+      <div>
+        <ul class="tags">
+        ${obj.technologies.map((technology) => `<li class="tag">${technology}</li>`).join('')}
+        </ul>
+      </div>
+      <div class="actions">
+        <button class="action action-text btn" id='${obj.id}'">See Project</button>
+      </div>
+    </div>
+  `;
+  return content;
+};
+
+const portfolioTitle = document.querySelector('.modal .portfolio-title');
+const modalImage = document.querySelector('.modal-image img');
+const portfolioDescription = document.querySelector('.modal .portfolio-description');
+const liveLink = document.querySelector('#live-link');
+const sourceLink = document.querySelector('#source-link');
+const technologies = document.querySelector('.modal-bottom-right .technologies');
+const clientRoleYear = document.querySelector('.modal .client-role-year');
+const createCardDetailContent = (obj) => {
+  portfolioTitle.textContent = obj.name;
+  modalImage.setAttribute('src', obj.image);
+  modalImage.setAttribute('alt', obj.name);
+  portfolioDescription.textContent = obj.description;
+  liveLink.setAttribute('href', obj.linkToLive);
+  sourceLink.setAttribute('href', obj.linkToSource);
+  technologies.innerHTML = '';
+  for (let i = 0; i < obj.technologies.length; i += 1) {
+    const listItem = document.createElement('li');
+    listItem.classList.add('tag');
+    listItem.textContent = obj.technologies[i];
+    technologies.appendChild(listItem);
+  }
+  clientRoleYear.innerHTML = obj.clientRoleYear;
+};
+
+portfolios.forEach((portfolio) => {
+  const cardElement = document.createElement('div');
+  cardElement.classList.add('card');
+  cardElement.innerHTML = createCardContent(portfolio);
+  works.append(cardElement);
+});
+
+const modal = document.querySelector('.modal-container');
+portfolios.forEach((portfolio) => {
+  const seeProjectButton = document.querySelector(`#${portfolio.id}`);
+  seeProjectButton.addEventListener('click', () => {
+    createCardDetailContent(portfolio);
+    modal.style.display = 'flex';
+  });
+});
+
+const closeModalContainer = document.querySelector('.close-container');
+closeModalContainer.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
