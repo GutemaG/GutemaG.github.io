@@ -194,14 +194,17 @@ form.addEventListener('submit', (event) => {
     showErrorMessage(EMAIL_ERROR_MESSAGE_UPPERCASE_ERROR);
   } else {
     hideErrorMessage();
-    const formData = {
-      name: form.name.value,
-      email: form.email.value,
-      message: form.message.value,
-    };
-    storeFormData('form-data', JSON.stringify(formData));
     form.submit();
   }
+});
+
+form.addEventListener('change', () => {
+  const formData = {
+    name: form.name.value,
+    email: form.email.value,
+    message: form.message.value,
+  };
+  storeFormData('form-data', JSON.stringify(formData));
 });
 
 form.email.addEventListener('keyup', (event) => {
