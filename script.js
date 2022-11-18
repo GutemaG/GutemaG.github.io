@@ -224,4 +224,4 @@ window.onload = () => {
     formData = JSON.parse(formData);
     setFormDataFromLocalStorage(formData);
   }
-}
+};
