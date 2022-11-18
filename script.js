@@ -211,3 +211,17 @@ form.email.addEventListener('keyup', (event) => {
     hideErrorMessage();
   }
 });
+
+const setFormDataFromLocalStorage = (formData) => {
+  form.name.value = formData.name;
+  form.email.value = formData.email;
+  form.message.value = formData.message;
+};
+
+window.onload = () => {
+  let formData = localStorage.getItem('form-data');
+  if (formData) {
+    formData = JSON.parse(formData);
+    setFormDataFromLocalStorage(formData);
+  }
+}
