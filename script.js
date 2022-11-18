@@ -164,3 +164,40 @@ const closeModalContainer = document.querySelector('.close-container');
 closeModalContainer.addEventListener('click', () => {
   modal.style.display = 'none';
 });
+
+const form = document.querySelector('.contact-form');
+const errorMessageContent = document.querySelector('.error-message');
+
+const showErrorMessage = (msg) => {
+  errorMessageContent.textContent = msg;
+  errorMessageContent.style.display = 'inline';
+};
+
+const hideErrorMessage = () => {
+  errorMessageContent.textContent = '';
+  errorMessageContent.style.display = 'none';
+};
+
+const isLowerText = (content) => (
+  content.trim() === content.trim().toLowerCase()
+);
+
+const EMAIL_ERROR_MESSAGE_UPPERCASE_ERROR = 'Make sure the email is in lowercase';
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const email = form.email.value;
+  if (!isLowerText(email)) {
+    showErrorMessage(EMAIL_ERROR_MESSAGE_UPPERCASE_ERROR);
+  } else {
+    hideErrorMessage();
+    form.submit();
+  }
+});
+
+form.email.addEventListener('keyup', (event) => {
+  if (!isLowerText(event.target.value)) {
+    showErrorMessage(EMAIL_ERROR_MESSAGE_UPPERCASE_ERROR);
+  } else {
+    hideErrorMessage();
+  }
+});
