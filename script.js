@@ -182,6 +182,10 @@ const isLowerText = (content) => (
   content.trim() === content.trim().toLowerCase()
 );
 
+const storeFormData = (key, value) => {
+  localStorage.setItem(key, value);
+};
+
 const EMAIL_ERROR_MESSAGE_UPPERCASE_ERROR = 'Make sure the email is in lowercase';
 form.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -190,6 +194,12 @@ form.addEventListener('submit', (event) => {
     showErrorMessage(EMAIL_ERROR_MESSAGE_UPPERCASE_ERROR);
   } else {
     hideErrorMessage();
+    const formData = {
+      name: form.name.value,
+      email: form.email.value,
+      message: form.message.value,
+    };
+    storeFormData('form-data', JSON.stringify(formData));
     form.submit();
   }
 });
