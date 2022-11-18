@@ -182,6 +182,10 @@ const isLowerText = (content) => (
   content.trim() === content.trim().toLowerCase()
 );
 
+const storeFormData = (key, value) => {
+  localStorage.setItem(key, value);
+};
+
 const EMAIL_ERROR_MESSAGE_UPPERCASE_ERROR = 'Make sure the email is in lowercase';
 form.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -194,6 +198,15 @@ form.addEventListener('submit', (event) => {
   }
 });
 
+form.addEventListener('change', () => {
+  const formData = {
+    name: form.name.value,
+    email: form.email.value,
+    message: form.message.value,
+  };
+  storeFormData('form-data', JSON.stringify(formData));
+});
+
 form.email.addEventListener('keyup', (event) => {
   if (!isLowerText(event.target.value)) {
     showErrorMessage(EMAIL_ERROR_MESSAGE_UPPERCASE_ERROR);
@@ -201,3 +214,17 @@ form.email.addEventListener('keyup', (event) => {
     hideErrorMessage();
   }
 });
+
+const setFormDataFromLocalStorage = (formData) => {
+  form.name.value = formData.name;
+  form.email.value = formData.email;
+  form.message.value = formData.message;
+};
+
+window.onload = () => {
+  let formData = localStorage.getItem('form-data');
+  if (formData) {
+    formData = JSON.parse(formData);
+    setFormDataFromLocalStorage(formData);
+  }
+};
