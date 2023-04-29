@@ -37,6 +37,17 @@ const createClientRoleYear = (client, role, year) => (
 
 const portfolios = [
   {
+    id: 'ruby-budget',
+    name: 'Ruby Budget App',
+    description: `Ruby Budget app is a simple app built using rails. The application is a create a group/category for their transactions and manage their transactions.`,
+    image: 'assets/images/budget-app-1.png',
+    technologies: ['Ruby', 'Rails', 'JavaScript'],
+    linkToLive: 'https://ruby-budget-app.onrender.com/',
+    linkToSource: 'https://github.com/GutemaG/rails-budget-app',
+    featured: '',
+    clientRoleYear: createClientRoleYear('Ruby', 'Ruby', '2023'),
+  },
+  {
     id: 'portfolio1',
     name: 'Tonic',
     description: `Lorem Ipsum is simply dummy text of the printing and 
