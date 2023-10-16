@@ -1,62 +1,27 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
+# React + TypeScript + Vite
 
-# Portfolio
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-> Portfolio project build a personal portfolio website using html, css and javascript
+Currently, two official plugins are available:
 
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Built With
+## Expanding the ESLint configuration
 
-- html
-- css
-- javascript
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-## Live Demo
+- Configure the top-level `parserOptions` property like this:
 
-try [Live Demo](https://gutemag.github.io/)
+```js
+   parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json'],
+    tsconfigRootDir: __dirname,
+   },
+```
 
-## Portfolio presentation video
-
-see [video description](https://www.loom.com/share/41eaf3d45d344994b5c9e12836d2db0f)
-
-## Getting Started
-
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-    - basic html, css, javascript 
-
-### Setup
-    - git clone https://github.com/GutemaG/GutemaG.github.io.git
-
-### Install
-    - npm install
-
-## Authors
-
-👤 **Birhanu Gudisa**
-
-- GitHub: [@githubhandle](https://github.com/GutemaG)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome!
-
-Feel free to check the [issues page](../../issues/).
-
-## Show your support
-
-Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
-
-## 📝 License
-
-This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
