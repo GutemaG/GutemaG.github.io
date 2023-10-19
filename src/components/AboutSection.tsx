@@ -1,6 +1,6 @@
 const AboutSection = () => {
   return (
-    <section className="py-24 bg-gray-100" id="about">
+    <section className="py-24 bg-gray-100">
       <div className="container mx-auto px-8">
         <h2 className="text-4xl font-semibold text-center mb-12 text-gray-800">
           About Me
@@ -19,18 +19,21 @@ const AboutSection = () => {
 
           {/* Education Background */}
           <div className="lg:w-1/3">
-            <h3 className="text-2xl font-bold mb-4 text-gray-700">Education</h3>
-            <div className="mb-4">
-              <h4 className="text-xl font-semibold">Adama Science and Technology University (ASTU)</h4>
-              <p className="text-lg">BSc Degree</p>
+            <h3 className="text-2xl font-bold mb-6 text-gray-700">Education</h3>
+
+            <div className="mb-6 bg-white p-4 rounded shadow">
+              <h4 className="text-xl font-semibold mb-2">Microverse</h4>
+              <p className="text-lg text-gray-600">Current Student</p>
             </div>
-            <div className="mb-4">
-              <h4 className="text-xl font-semibold">Adama Science and Technology University (ASTU)</h4>
-              <p className="text-lg">MSc Degree</p>
+
+            <div className="mb-6 bg-white p-4 rounded shadow">
+              <h4 className="text-xl font-semibold mb-2">Adama Science and Technology University (ASTU)</h4>
+              <p className="text-lg text-gray-600">MSc Degree</p>
             </div>
-            <div>
-              <h4 className="text-xl font-semibold">Microverse</h4>
-              <p className="text-lg">Current Student</p>
+
+            <div className="bg-white p-4 rounded shadow">
+              <h4 className="text-xl font-semibold mb-2">Adama Science and Technology University (ASTU)</h4>
+              <p className="text-lg text-gray-600">BSc Degree</p>
             </div>
           </div>
         </div>
