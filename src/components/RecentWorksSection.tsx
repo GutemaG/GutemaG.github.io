@@ -38,14 +38,6 @@ const portfolios: IPortfolio[] = [
       industry. Lorem Ipsum has been the industry's standard dummy text
       ever since the 1500s, when an unknown printer took a galley of
       ever since the 1500s, when an unknown printer took a galley of
-      ever since the 1500s, when an unknown printer took a galley of
-      ever since the 1500s, when an unknown printer took a galley of
-      ever since the 1500s, when an unknown printer took a galley of
-      ever since the 1500s, when an unknown printer took a galley of
-      ever since the 1500s, when an unknown printer took a galley of
-      ever since the 1500s, when an unknown printer took a galley of
-      ever since the 1500s, when an unknown printer took a galley of
-      ever since the 1500s, when an unknown printer took a galley of
       lorem Ipsum is simply dummy text of the printing and typesetting
       industry. Lorem Ipsum has been the industry's standard dummy text
       ever since the 1500s, when an unknown printer took a galley of
@@ -84,9 +76,9 @@ const portfolios: IPortfolio[] = [
 
 const RecentWorksSection = () => {
   return (
-    <section className="bg-gray-100 py-16">
+    <section className="py-16 bg-gray-50">
       <div className="container mx-auto">
-        <h2 className="text-4xl font-semibold text-center mb-12">
+        <h2 className="text-4xl font-semibold text-center mb-12 text-gray-800">
           Recent Works
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

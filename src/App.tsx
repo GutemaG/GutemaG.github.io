@@ -1,15 +1,17 @@
 import AboutSection from "./components/AboutSection";
 import ContactSection from "./components/ContactSection";
-import { Header } from "./components/Header";
+import Header from "./components/Header";
 import PortfolioSection from "./components/PortfolioSection";
 import RecentWorksSection from "./components/RecentWorksSection";
+import SkillsSection from "./components/SkillSection";
 
 function App() {
   return (
-    <div className="bg-gray-100 py-16" >
+    <div className="bg-gray-50 md:p-12 sm:p-2" >
       <Header />
       <PortfolioSection />
       <RecentWorksSection />
+      <SkillsSection />
       <AboutSection />
       <ContactSection />
     </div>

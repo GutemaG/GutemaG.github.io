@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { AiOutlineCloseCircle, AiOutlineMenu } from "react-icons/ai";
+import { AiOutlineMenu } from "react-icons/ai";
 
-export const Header = () => {
-  const [menuActive, setMenuActive] = useState(false);
+const Header: React.FC = () => {
+  const [menuActive, setMenuActive] = useState<boolean>(false);
 
   const toggleMenu = () => {
-    setMenuActive(!menuActive);
+    setMenuActive((prevState) => !prevState);
   };
 
   const closeMenu = () => {
@@ -13,61 +13,58 @@ export const Header = () => {
   };
 
   return (
-    <header className="bg-white shadow-lg header">
-      <nav className="container mx-auto flex items-center justify-between p-4">
-        <a
-          href="#"
-          className="logo text-primary font-bold text-lg hover:scale-150 transition-transform"
-        >
-          Birhanu G
-        </a>
-        <button
-          className="menu-icon bg-transparent border-none md:hidden"
-          onClick={toggleMenu}
-        >
-          {!menuActive && <AiOutlineMenu />}
+    <div className="p-4 fixed right-0 top-0 z-10">
+      <div className="relative">
+        <button onClick={toggleMenu}>
+          <div className="p-2 shadow-lg">
+            <AiOutlineMenu className="text-2xl text-gray-800" />
+          </div>
         </button>
-        <ul
-          className={`menu ${
-            menuActive ? "flex flex-col md:flex-row" : "hidden"
-          } md:flex md:items-center md:space-x-4`}
-        >
-          <li className="nav-item">
-            <a
-              href="#portfolio"
-              className="text-primary hover:underline"
-              onClick={closeMenu}
-            >
-              Portfolio
-            </a>
-          </li>
-          <li className="nav-item">
-            <a
-              href="#about"
-              className="text-primary hover:underline"
-              onClick={closeMenu}
-            >
-              About
-            </a>
-          </li>
-          <li className="nav-item">
-            <a
-              href="#contact"
-              className="text-primary hover:underline"
-              onClick={closeMenu}
-            >
-              Contact
-            </a>
-          </li>
-          {menuActive && (
-            <li className="nav-item">
-              <a className="text-primary hover:underline" onClick={closeMenu}>
-                <AiOutlineCloseCircle />
-              </a>
-            </li>
-          )}
-        </ul>
-      </nav>
-    </header>
+        {menuActive && (
+          <div className="w-48 absolute right-0 top-10 mt-2 bg-white rounded-lg shadow-sm">
+            <ul className="flex flex-col space-y-4 p-4">
+              <li className="nav-item">
+                <a
+                  href="#portfolio"
+                  className="text-gray-800 hover:underline"
+                  onClick={closeMenu}
+                >
+                  Home
+                </a>
+              </li>
+              <li className="nav-item">
+                <a
+                  href="#skills"
+                  className="text-gray-800 hover:underline"
+                  onClick={closeMenu}
+                >
+                  Skills
+                </a>
+              </li>
+              <li className="nav-item">
+                <a
+                  href="#about"
+                  className="text-gray-800 hover:underline"
+                  onClick={closeMenu}
+                >
+                  About
+                </a>
+              </li>
+              <li className="nav-item">
+                <a
+                  href="#contact-me"
+                  className="text-gray-800 hover:underline"
+                  onClick={closeMenu}
+                >
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+        )}
+      </div>
+    </div>
   );
 };
+
+export default Header;

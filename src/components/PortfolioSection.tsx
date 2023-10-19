@@ -1,52 +1,34 @@
-import { FaXTwitter, FaLinkedin, FaGithub, FaFacebook } from "react-icons/fa6";
-import bg1 from "../assets/header-bg.png";
-import mobileBg from "../assets/mobile-bg.png";
+import { FaTwitter, FaLinkedin, FaGithub, FaFacebook } from "react-icons/fa";
 
 const PortfolioSection = () => {
-  const isMobile = window.innerWidth <= 768;
   return (
-    <section
-      className="bg-white py-32 -mt-1 h-screen rounded-bl-10xl"
-      id="portfolio"
-      style={{
-        // backgroundColor:"red",
-        backgroundImage: `url(${isMobile ? mobileBg : bg1})`,
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "contain",
-        backgroundPosition: "center",
-      }}
-    >
+    <section className="py-32 h-screen bg-gray-50 text-gray-800 rounded-bl-10xl" id="portfolio">
       <div className="max-w-4xl mx-auto px-4">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-8">
-          I’m Birhanu Glad to see you!
-        </h2>
-        <p className="text-lg text-gray-700 mb-8">
-          I’m a software developer! I can help you build a product, feature, or
-          website. Look through some of my work and experience! If you like what
-          you see and have a project you need coded, don’t hesitate to contact
-          me.
+        <h2 className="text-4xl sm:text-5xl font-extrabold mb-8">Hi, I'm Birhanu. Passionate Software Developer.</h2>
+        <p className="text-lg sm:text-xl mb-8">
+          I craft innovative digital solutions. Explore my projects and skills, and let's collaborate.
         </p>
         <div className="flex items-center gap-6">
-          <h3 className="text-xl text-blue-500 font-bold">LET’S CONNECT</h3>
+          <h3 className="text-2xl font-bold border-b-2 border-blue-400">Connect with Me</h3>
           <ul className="flex gap-4">
             <li>
-              <a href="#">
-                <FaXTwitter />
+              <a href="#" className="hover:text-blue-500 transition duration-300">
+                <FaTwitter size={24} />
               </a>
             </li>
             <li>
-              <a href="#">
-                <FaLinkedin />
+              <a href="#" className="hover:text-blue-500 transition duration-300">
+                <FaLinkedin size={24} />
               </a>
             </li>
             <li>
-              <a href="#">
-                <FaGithub />
+              <a href="#" className="hover:text-blue-500 transition duration-300">
+                <FaGithub size={24} />
               </a>
             </li>
             <li>
-              <a href="#">
-                <FaFacebook />
+              <a href="#" className="hover:text-blue-500 transition duration-300">
+                <FaFacebook size={24} />
               </a>
             </li>
           </ul>
