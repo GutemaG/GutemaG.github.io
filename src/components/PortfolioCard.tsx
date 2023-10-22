@@ -21,7 +21,7 @@ const PortfolioCard = ({ portfolio }: PortfolioCardProps) => {
         <img
           src={portfolio.image}
           alt={portfolio.name}
-          className="w-full object-cover md:h-96 lg:h-[400px] transition-transform transform hover:scale-105 duration-300"
+          className="w-full object-cover md:h-96 lg:h-[350px] transition-transform transform hover:scale-100 duration-300"
         />
         <div className="absolute inset-0 bg-black opacity-50 hover:opacity-0 transition-opacity duration-300"></div>
         <a

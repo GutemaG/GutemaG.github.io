@@ -17,15 +17,23 @@ const ContactSection = () => {
             </div>
             <div className="mb-4 flex items-center text-white">
               <FaGithub size={24} className="mr-3" />
-              <span className="text-xl">github.com/GutemaG</span>
+              <a href="https://github.com/GutemaG">
+                <span className="text-xl">github.com/GutemaG</span>
+              </a>
             </div>
             <div className="mb-4 flex items-center text-white">
               <FaWhatsapp size={24} className="mr-3" />
-              <span className="text-xl">+2519-21-64-17-44</span>
+              <a
+                href="https://wa.me/251921641744"
+              >
+                <span className="text-xl">+2519-21-64-17-44</span>
+              </a>
             </div>
             <div className="flex items-center text-white">
               <FaTelegram size={24} className="mr-3" />
-              <span className="text-xl">@birhanugu</span>
+              <a href="https://t.me/birhanugu">
+                <span className="text-xl">@birhanugu</span>
+              </a>
             </div>
           </div>
 

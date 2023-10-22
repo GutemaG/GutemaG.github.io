@@ -1,5 +1,8 @@
 import budgetApp1 from "../assets/budget-app-1.png";
 import PortfolioCard from "./PortfolioCard";
+import todoImage from "../assets/todo.png";
+import mealsApiImage from "../assets/meals-api.png";
+import spaceTravelImage  from '../assets/space-travel.png'
 // import PortfolioDetailDialog from "./PortfolioDetailDialog";
 
 export interface IPortfolio {
@@ -12,6 +15,7 @@ export interface IPortfolio {
   clientRoleYear: string[];
   image: string;
   featured: string;
+  videoDescriptionLink: string;
 }
 
 const portfolios: IPortfolio[] = [
@@ -20,57 +24,62 @@ const portfolios: IPortfolio[] = [
     name: "Ruby Budget App",
     description: `Ruby Budget app is a simple app built using rails. The application is a create a group/category for their transactions and manage their transactions.`,
     image: budgetApp1,
-    technologies: ["Ruby", "Rails", "JavaScript"],
+    technologies: ["Ruby", "Rails", "JavaScript", "Postgresql"],
     linkToLive: "https://ruby-budget-app.onrender.com/",
     linkToSource: "https://github.com/GutemaG/rails-budget-app",
     featured: "",
     clientRoleYear: ["Ruby", "Ruby", "2023"],
+    videoDescriptionLink:
+      "https://www.loom.com/share/e014f313b7834929a575df5a8d7494db",
   },
   {
-    id: "portfolio1",
-    name: "Tonic",
-    description: `Lorem Ipsum is simply dummy text of the printing and 
-      typesetting industry. Lorem Ipsum has been the industry's standard 
-      dummy text ever since the 1500s, when an unknown printer took a 
-      galley of type and scrambled it to make a type specimen book. 
-      It has survived not only five centuries, but also the leap into 
-      lorem Ipsum is simply dummy text of the printing and typesetting
-      industry. Lorem Ipsum has been the industry's standard dummy text
-      ever since the 1500s, when an unknown printer took a galley of
-      ever since the 1500s, when an unknown printer took a galley of
-      lorem Ipsum is simply dummy text of the printing and typesetting
-      industry. Lorem Ipsum has been the industry's standard dummy text
-      ever since the 1500s, when an unknown printer took a galley of
-      electronic typesetting, remaining essent`,
-    image: budgetApp1,
-    technologies: ["HTML", "CSS", "JavaScript"],
-    linkToLive: "#",
-    linkToSource: "#",
+    id: "todo-list",
+    name: "To Do List",
+    description: `
+      A user-friendly To Do List application that allows users to efficiently track their tasks. 
+      Features include adding tasks, removing tasks, marking tasks as complete, and clearing completed tasks.
+      The application provides data persistence using the browser's local storage and is built using ES6 features.`,
+    image: todoImage,
+    technologies: ["JavaScript", "HTML", "CSS", "Webpack"],
+    linkToLive: "https://gutemag.github.io/todo-list-application/dist",
+    linkToSource: "https://github.com/GutemaG/todo-list-application",
     featured: "",
-    clientRoleYear: ["CANOPY", "Back End Dev", "2022"],
+    clientRoleYear: ["Self", "Full Stack Developer", "2022"],
+    videoDescriptionLink: "",
   },
+
   {
-    id: "ruby-budget2",
-    name: "Ruby Budget App",
-    description: `Ruby Budget app is a simple app built using rails. The application is a create a group/category for their transactions and manage their transactions.`,
-    image: budgetApp1,
-    technologies: ["Ruby", "Rails", "JavaScript"],
-    linkToLive: "https://ruby-budget-app.onrender.com/",
-    linkToSource: "https://github.com/GutemaG/rails-budget-app",
+    id: "meals-api",
+    name: "Meals API",
+    description: `
+    This is my capstone project for @microverse which includes a resturant app in 
+    which all data is being fetch using API (Cards Popups Comments)
+    and when you add new comment or new Like
+     to a card the interaction is saved on the Involvement API.
+    `,
+    image: mealsApiImage,
+    technologies: ["JavaScript", "HTML", "CSS", "Webpack"],
+    linkToLive: "https://jolly-palmier-ef9b64.netlify.app/",
+    linkToSource: "https://github.com/ahadb802/First-API-Project-",
     featured: "",
     clientRoleYear: ["Ruby", "Ruby", "2023"],
+    videoDescriptionLink: "",
   },
   {
-    id: "portfolio12",
-    name: "Tonic",
-    description: `Lorem Ipsum is simply dummy text of the printing and 
-      typesetting industry. Lorem Ipsum has been the industry's standard electronic typesetting, remaining essent`,
-    image: budgetApp1,
-    technologies: ["HTML", "CSS", "JavaScript"],
-    linkToLive: "#",
-    linkToSource: "#",
+    id: "space-travel",
+    name: "Space Travelers Hub",
+    description: `
+    Space Travelers' Hub is a web application for a company that provides commercial and scientific space travel services. 
+    It fetch data about rockets and misions from Api.
+    The application will allow users to book rockets and join selected space missions. It was coded using React and Redux.
+    `,
+    image: spaceTravelImage,
+    technologies: ["React.js","HTML 5","CSS 3","JavaScript","React","Redux"],
+    linkToLive: "https://www.paulsaenzsucre.dev/space-travelers-hub/",
+    linkToSource: "https://github.com/paulsaenzsucre/space-travelers-hub",
     featured: "",
-    clientRoleYear: ["CANOPY", "Back End Dev", "2022"],
+    clientRoleYear: ["Ruby", "Ruby", "2023"],
+    videoDescriptionLink: "",
   },
 ];
 
