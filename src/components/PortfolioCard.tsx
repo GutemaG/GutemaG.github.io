@@ -15,7 +15,8 @@ const PortfolioCard = ({ portfolio }: PortfolioCardProps) => {
   return (
     <div
       key={portfolio.id}
-      className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+      className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 hover:md:scale-110"
+      data-aos="fade-left"
     >
       <div className="relative overflow-hidden">
         <img

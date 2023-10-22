@@ -3,7 +3,7 @@ import { FaPhone, FaGithub, FaWhatsapp, FaTelegram } from "react-icons/fa";
 
 const ContactSection = () => {
   return (
-    <section className="py-24 bg-gray-900 rounded-xl" id="contact-me">
+    <section className="py-24 bg-gray-900 rounded-xl" id="contact-me" data-aos="fade-up">
       <div className="container mx-auto px-4 sm:px-8">
         <h2 className="text-4xl font-semibold text-center mb-12 text-white">
           Contact Me

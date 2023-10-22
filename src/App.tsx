@@ -7,7 +7,7 @@ import SkillsSection from "./components/SkillSection";
 
 function App() {
   return (
-    <div className="bg-gray-50 md:p-12 sm:p-2">
+    <div className="bg-gray-50 md:p-12 sm:p-2 scroll:smooth">
       <Header />
       <PortfolioSection />
       <RecentWorksSection />

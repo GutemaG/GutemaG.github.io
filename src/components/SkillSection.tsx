@@ -100,6 +100,7 @@ const SkillsSection = () => {
             <div
               key={skill.id}
               className="flex flex-col items-center bg-white p-6 rounded-lg shadow-lg w-64"
+              data-aos="fade-up"
             >
               {skill.icon}
               <h3 className="text-2xl font-semibold">{skill.name}</h3>
