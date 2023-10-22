@@ -1,3 +1,4 @@
+import { BiLogoGmail } from "react-icons/bi";
 import { FaPhone, FaGithub, FaWhatsapp, FaTelegram } from "react-icons/fa";
 
 const ContactSection = () => {
@@ -23,9 +24,7 @@ const ContactSection = () => {
             </div>
             <div className="mb-4 flex items-center text-white">
               <FaWhatsapp size={24} className="mr-3" />
-              <a
-                href="https://wa.me/251921641744"
-              >
+              <a href="https://wa.me/251921641744">
                 <span className="text-xl">+2519-21-64-17-44</span>
               </a>
             </div>
@@ -35,11 +34,19 @@ const ContactSection = () => {
                 <span className="text-xl">@birhanugu</span>
               </a>
             </div>
+            <div className="mt-2 flex items-center text-white">
+              <BiLogoGmail size={24} className="mr-3" />
+              <span className="text-xl">bir13gud17@gmail.com</span>
+            </div>
           </div>
 
           {/* Contact Form */}
           <div className="w-full sm:w-2/3">
-            <form>
+            <form
+              action="mailto:bir13gud17@gmail.com"
+              method="GET"
+              encType="text/plain"
+            >
               <div className="mb-6">
                 <label
                   htmlFor="name"
@@ -53,23 +60,10 @@ const ContactSection = () => {
                   name="name"
                   placeholder="Your Name"
                   className="w-full px-3 py-2 border rounded-md"
+                  required
                 />
               </div>
-              <div className="mb-6">
-                <label
-                  htmlFor="phone"
-                  className="block text-xl font-bold mb-2 text-white"
-                >
-                  Phone:
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  placeholder="Your Phone Number"
-                  className="w-full px-3 py-2 border rounded-md"
-                />
-              </div>
+
               <div className="mb-6">
                 <label
                   htmlFor="message"
@@ -83,6 +77,7 @@ const ContactSection = () => {
                   rows={5}
                   placeholder="Your Message"
                   className="w-full px-3 py-2 border rounded-md"
+                  required
                 ></textarea>
               </div>
               <div className="mt-6">
