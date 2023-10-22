@@ -40,7 +40,7 @@ const portfolios: IPortfolio[] = [
       Features include adding tasks, removing tasks, marking tasks as complete, and clearing completed tasks.
       The application provides data persistence using the browser's local storage and is built using ES6 features.`,
     image: todoImage,
-    technologies: ["JavaScript", "HTML", "CSS", "Webpack"],
+    technologies: ["JavaScript", "HTML5", "CSS3", "Webpack"],
     linkToLive: "https://gutemag.github.io/todo-list-application/dist",
     linkToSource: "https://github.com/GutemaG/todo-list-application",
     featured: "",
@@ -52,13 +52,13 @@ const portfolios: IPortfolio[] = [
     id: "meals-api",
     name: "Meals API",
     description: `
-    This is my capstone project for @microverse which includes a resturant app in 
+    This is my capstone project for @microverse which includes a restaurant app in 
     which all data is being fetch using API (Cards Popups Comments)
     and when you add new comment or new Like
      to a card the interaction is saved on the Involvement API.
     `,
     image: mealsApiImage,
-    technologies: ["JavaScript", "HTML", "CSS", "Webpack"],
+    technologies: ["JavaScript", "HTML5", "CSS3", "Webpack"],
     linkToLive: "https://jolly-palmier-ef9b64.netlify.app/",
     linkToSource: "https://github.com/ahadb802/First-API-Project-",
     featured: "",
@@ -70,11 +70,11 @@ const portfolios: IPortfolio[] = [
     name: "Space Travelers Hub",
     description: `
     Space Travelers' Hub is a web application for a company that provides commercial and scientific space travel services. 
-    It fetch data about rockets and misions from Api.
+    It fetch data about rockets and missions from Api.
     The application will allow users to book rockets and join selected space missions. It was coded using React and Redux.
     `,
     image: spaceTravelImage,
-    technologies: ["React.js","HTML 5","CSS 3","JavaScript","React","Redux"],
+    technologies: ["React","HTML5","CSS3","JavaScript","Redux"],
     linkToLive: "https://www.paulsaenzsucre.dev/space-travelers-hub/",
     linkToSource: "https://github.com/paulsaenzsucre/space-travelers-hub",
     featured: "",
