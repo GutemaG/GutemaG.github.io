@@ -1,11 +1,14 @@
+import { FaReact, FaVuejs, FaPython, FaGithub, FaGitAlt } from "react-icons/fa";
 import {
-  FaReact,
-  FaVuejs,
-  FaDatabase,
-  FaPython,
-  FaGithub,
-  FaGitAlt,
-} from "react-icons/fa";
+  BiLogoTypescript,
+  BiLogoJavascript,
+  BiLogoCss3,
+  BiLogoHtml5,
+  BiLogoPostgresql,
+  BiLogoRedux,
+} from "react-icons/bi";
+import { DiMysql } from "react-icons/di";
+import { GiSpiderWeb} from "react-icons/gi";
 import { BiLogoDjango } from "react-icons/bi";
 
 const SkillsSection = () => {
@@ -14,6 +17,11 @@ const SkillsSection = () => {
       id: "react",
       name: "React",
       icon: <FaReact size={40} className="mb-4" />,
+    }, 
+    {
+      id: "redux",
+      name: "State Management (Redux) ",
+      icon: <BiLogoRedux size={40} className="mb-4" />,
     },
     {
       id: "vue",
@@ -24,11 +32,6 @@ const SkillsSection = () => {
       id: "django",
       name: "Django",
       icon: <BiLogoDjango size={40} className="mb-4" />,
-    },
-    {
-      id: "database",
-      name: "Database",
-      icon: <FaDatabase size={40} className="mb-4" />,
     },
     {
       id: "python",
@@ -45,7 +48,46 @@ const SkillsSection = () => {
       name: "Git",
       icon: <FaGitAlt size={40} className="mb-4" />,
     },
+    {
+      id: "typescript",
+      name: "TypeScript",
+      icon: <BiLogoTypescript size={40} className="mb-4" />,
+    },
+    {
+      id: "javascript",
+      name: "JavaScript",
+      icon: <BiLogoJavascript size={40} className="mb-4" />,
+    },
+    {
+      id: "css3",
+      name: "CSS3",
+      icon: <BiLogoCss3 size={40} className="mb-4" />,
+    },
+    {
+      id: "html5",
+      name: "HTML5",
+      icon: <BiLogoHtml5 size={40} className="mb-4" />,
+    },
+
+    // PostgreSQL, MySQL, Front-end development, responsive web design
+    {
+      id: "postgreSQL",
+      name: "PostgreSQL",
+      icon: <BiLogoPostgresql size={40} className="mb-4" />,
+    },
+    {
+      id: "MySQL",
+      name: "MySQL",
+      icon: <DiMysql size={40} className="mb-4" />,
+    },
+    {
+      id: "responsive-web-design",
+      name: "Responsive Web Design",
+      icon: <GiSpiderWeb size={40} className="mb-4" />,
+    },
   ];
+  // skills: JavaScript, CSS3, React, Redux, TypeScript, Ruby,
+  // Ruby on Rails, PostgreSQL, MySQL, Front-end development, responsive web design
   return (
     <section className="py-16 bg-gray-50" id="skills">
       <div className="container mx-auto px-4 text-center">
@@ -64,6 +106,7 @@ const SkillsSection = () => {
             </div>
           ))}
         </div>
+        
       </div>
     </section>
   );
