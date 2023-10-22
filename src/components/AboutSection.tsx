@@ -10,7 +10,7 @@ const AboutSection = () => {
           {/* Personal Description */}
           <div className="lg:w-2/3">
             <p className="text-lg mb-6">
-              Hello! I'm [Your Name], a passionate software developer. I enjoy creating robust and scalable applications that provide value to users. My journey in the tech world began at an early age, and since then, I've been immersed in coding, always eager to learn more.
+              Hello! I'm Birhanu Gudisa, a passionate software developer. I enjoy creating robust and scalable applications that provide value to users. My journey in the tech world began at an early age, and since then, I've been immersed in coding, always eager to learn more.
             </p>
             <p className="text-lg mb-6">
               Over the years, I've worked on a diverse set of projects, ranging from simple web apps to complex distributed systems. Each project taught me something new, helping me grow as a developer.
