@@ -2,7 +2,7 @@ import budgetApp1 from "../assets/budget-app-1.png";
 import PortfolioCard from "./PortfolioCard";
 import todoImage from "../assets/todo.png";
 import mealsApiImage from "../assets/meals-api.png";
-import spaceTravelImage  from '../assets/space-travel.png'
+import spaceTravelImage from "../assets/space-travel.png";
 // import PortfolioDetailDialog from "./PortfolioDetailDialog";
 
 export interface IPortfolio {
@@ -74,7 +74,7 @@ const portfolios: IPortfolio[] = [
     The application will allow users to book rockets and join selected space missions. It was coded using React and Redux.
     `,
     image: spaceTravelImage,
-    technologies: ["React","HTML5","CSS3","JavaScript","Redux"],
+    technologies: ["React", "HTML5", "CSS3", "JavaScript", "Redux"],
     linkToLive: "https://www.paulsaenzsucre.dev/space-travelers-hub/",
     linkToSource: "https://github.com/paulsaenzsucre/space-travelers-hub",
     featured: "",
@@ -85,9 +85,12 @@ const portfolios: IPortfolio[] = [
 
 const RecentWorksSection = () => {
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="container mx-auto">
-        <h2 className="text-4xl font-semibold text-center mb-12 text-gray-800">
+    <section
+      className="w-full py-16 bg-gray-50 dark:bg-gray-900 transition-colors duration-500"
+      id="recent-works"
+    >
+      <div className="w-full max-w-7xl mx-auto px-4">
+        <h2 className="text-4xl font-semibold text-center mb-12 text-gray-800 dark:text-white">
           Recent Works
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

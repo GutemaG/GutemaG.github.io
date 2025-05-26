@@ -8,7 +8,7 @@ import {
   BiLogoRedux,
 } from "react-icons/bi";
 import { DiMysql } from "react-icons/di";
-import { GiSpiderWeb} from "react-icons/gi";
+import { GiSpiderWeb } from "react-icons/gi";
 import { BiLogoDjango } from "react-icons/bi";
 
 const SkillsSection = () => {
@@ -17,7 +17,7 @@ const SkillsSection = () => {
       id: "react",
       name: "React",
       icon: <FaReact size={40} className="mb-4" />,
-    }, 
+    },
     {
       id: "redux",
       name: "State Management (Redux) ",
@@ -89,25 +89,28 @@ const SkillsSection = () => {
   // skills: JavaScript, CSS3, React, Redux, TypeScript, Ruby,
   // Ruby on Rails, PostgreSQL, MySQL, Front-end development, responsive web design
   return (
-    <section className="py-16 bg-gray-50" id="skills">
-      <div className="container mx-auto px-4 text-center">
-        <h2 className="text-4xl font-semibold text-center mb-12 text-gray-800">
+    <section
+      className="w-full py-16 bg-gray-50 dark:bg-gray-900 transition-colors duration-500"
+      id="skills"
+    >
+      <div className="w-full max-w-7xl mx-auto px-4 text-center">
+        <h2 className="text-4xl font-semibold text-center mb-12 text-gray-800 dark:text-white">
           Skills & Technologies
         </h2>
-
-        <div className="flex flex-wrap justify-center gap-12">
+        <div className="flex flex-wrap justify-center gap-8 md:gap-12">
           {skills.map((skill) => (
             <div
               key={skill.id}
-              className="flex flex-col items-center bg-white p-6 rounded-lg shadow-lg w-64"
+              className="flex flex-col items-center bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg w-64 transition-colors"
               data-aos="fade-up"
             >
               {skill.icon}
-              <h3 className="text-2xl font-semibold">{skill.name}</h3>
+              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">
+                {skill.name}
+              </h3>
             </div>
           ))}
         </div>
-        
       </div>
     </section>
   );

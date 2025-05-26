@@ -15,7 +15,7 @@ const PortfolioCard = ({ portfolio }: PortfolioCardProps) => {
   return (
     <div
       key={portfolio.id}
-      className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 hover:md:scale-110"
+      className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 hover:md:scale-105 w-full"
       data-aos="fade-left"
     >
       <div className="relative overflow-hidden">
@@ -34,18 +34,18 @@ const PortfolioCard = ({ portfolio }: PortfolioCardProps) => {
           View Live
         </a>
       </div>
-      <div className="p-4">
-        <h3 className="text-xl font-semibold mb-2 text-gray-800">
+      <div className="p-6">
+        <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-white">
           {portfolio.name}
         </h3>
-        <p className="text-gray-600 mb-4">
+        <p className="text-gray-600 dark:text-gray-300 mb-4">
           {portfolio.description.substring(0, 150)} ...{" "}
         </p>
         <div className="flex flex-wrap space-x-2 mb-4">
           {portfolio.technologies.map((tech, index) => (
             <span
               key={index}
-              className="bg-gray-300 rounded-full py-1 px-2 text-xs text-gray-700 mb-2"
+              className="bg-gray-300 dark:bg-gray-700 rounded-full py-1 px-2 text-xs text-gray-700 dark:text-gray-200 mb-2"
             >
               {tech}
             </span>
